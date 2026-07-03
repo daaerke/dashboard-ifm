@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>卓正医疗 运维数据看板</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#f7f8fa;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;color:#1e2030;font-size:14px;padding:40px 32px;min-height:100vh;display:flex;flex-direction:column}
+.container{max-width:960px;margin:0 auto;width:100%;display:flex;flex-direction:column;flex:1}
+h1{font-size:26px;font-weight:700;margin-bottom:6px}
+.sub{color:#6c757d;font-size:14px; margin: 36px auto;}
+.header{display:flex;align-items:center;gap:16px;margin-bottom:6px}
+.header img.logo{height:48px;width:auto;display:block}
+.header h1{line-height: 48px; margin-bottom: 0px; color: #006D83;}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:680px){.cards{grid-template-columns:1fr}}
+.card{display:flex;align-items:flex-start;gap:16px;background:#fff;border:1px solid #e9ecef;border-radius:12px;padding:28px 24px;text-decoration:none;color:inherit;transition:border-color .2s,box-shadow .2s}
+.card:hover{border-color:#1c7ed6;box-shadow:0 4px 20px rgba(28,126,214,0.1)}
+.card-content{flex:1;display:flex;flex-direction:column}
+.card-icon{flex-shrink:0;width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px}
+.card-icon.eq{background:#e7f5ff;color:#1c7ed6}
+.card-icon.fa{background:#e6fcf5;color:#0ca678}
+.card h2{font-size:18px;font-weight:700;margin-bottom:8px}
+.card-desc{color:#495057;font-size:13px;line-height:1.7;margin-bottom:16px}
+.card-meta{display:flex;gap:12px;flex-wrap:wrap}
+.card-meta .tag{font-size:12px;padding:3px 10px;border-radius:10px;font-weight:500}
+.tag-blue{background:#e7f5ff;color:#1c7ed6}
+.tag-green{background:#e6fcf5;color:#0ca678}
+.tag-gray{background:#f1f3f5;color:#495057}
+.footer{text-align:center;color:#adb5bd;font-size:12px;margin-top:auto;padding-top:24px;border-top:1px solid #e9ecef}
+.garyy{filter: grayscale(100%) brightness(1.2); opacity: 0.5;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <img class="logo" src="logo.png" alt="卓正医疗 Distinct HealthCare">
+    <h1>| 运维数据看板</h1>
+  </div>
+  <p class="sub">统一入口 · 三个看板</p>
+  <div class="cards">
+    <a href="db-eq/latest.html" class="card">
+      <div class="card-icon eq">🔧</div>
+      <div class="card-content">
+        <h2>医疗设备维修数据看板</h2>
+        <p class="card-desc">院区/科室/设备多维度分析，2025 vs 2026 同比对比，高频维修与返修设备追踪，智能维保建议。</p>
+      </div>
+    </a>
+    <a href="db-fa/latest.html" class="card">
+      <div class="card-icon fa">📋</div>
+      <div class="card-content">
+        <h2>非医疗设备报修数据看板</h2>
+        <p class="card-desc">报修工单全流程分析，3角色差异化视图，12 Tab + 5 KPI，7规则异常自动检测。</p>
+      </div>
+    </a>
+    <a href="###" class="card garyy">
+      <div class="card-icon fa">🧹</div>
+      <div class="card-content">
+        <h2>保洁服务费看板（upcoming..）</h2>
+        <p class="card-desc">监控保洁服务费，分析保洁服务费趋势，预测保洁服务费，分析保洁服务费异常。</p>
+      </div>
+    </a>
+  </div>
+  <div class="footer">
+    卓正医疗 · 运维数据 · 定期自动化更新
+  </div>
+</div>
+</body>
+</html>
