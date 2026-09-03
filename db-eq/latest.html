@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-page-node-id="RzlEMK4b56Y4YuetLG1qHS">
-<head data-page-node-id="VVk83UbDllaECaN8rAoAKy">
-<meta charset="UTF-8" data-page-node-id="pwwqLjMj1RWSa9zYA6nyUj">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="CdeKaLpKolrv5M8zKyb6mF">
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>卓正医疗 医疗设备运维数据看板 v20260901</title>
-<link rel="icon" href="lib/logo.png" type="image/png" data-page-node-id="bwBBJRENbMUyoCjjvoDDf6">
+<link rel="icon" href="lib/logo.png" type="image/png">
 <script src="lib/echarts.min.js"></script>
 <script>(function(){if(typeof echarts!=="undefined")return;var s=document.createElement("script");s.src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js";document.head.appendChild(s);})();</script>
 <style>
@@ -133,295 +133,295 @@ tbody tr:hover{background:#fafbfc}
 .sidebar-section-label{font-size:10.5px;color:#adb5bd;font-weight:600;padding:8px 12px 2px;text-transform:uppercase;letter-spacing:0.5px}
 </style>
 </head>
-<body data-page-node-id="kXP0ZYNgZG5Yn0gB25Ffru">
-<div class="topbar" data-page-node-id="JC7jnUOJzwupjbqcLGjXq2">
-  <div class="logo" data-page-node-id="8mJwMH21dty9bMVzynnOGr">
-    <img src="lib/logo.png" alt="卓正医疗" class="logo-img" onerror="this.outerHTML='<span class=&quot;logo-fallback&quot; data-page-node-id="KUbH2lxas40YeBmS7mdYFS">卓正医疗</span>'"/>
-    <span class="logo-text" data-page-node-id="q4qtoCOAyesjxW7Jf73NJj">医疗设备运维看板</span>
+<body>
+<div class="topbar">
+  <div class="logo">
+    <img src="lib/logo.png" alt="卓正医疗" class="logo-img" onerror="this.outerHTML='<span class=&quot;logo-fallback&quot;>卓正医疗</span>'"/>
+    <span class="logo-text">医疗设备运维看板</span>
   </div>
-  <div class="top-tools" data-page-node-id="o9y9j5B1USX5quqhAfEO0E">
-    <span class="version-badge" data-page-node-id="wS1XBrUzZC4fTIiMCAtwsC">v20260901</span>
+  <div class="top-tools">
+    <span class="version-badge">v20260901</span>
   </div>
 </div>
-<div class="layout" data-page-node-id="yy3iVplPtS3JVS3jEHWJjy">
-  <aside class="sidebar" data-page-node-id="CBdfMHH9EDEMiA93SykvzU">
-    <div class="sidebar-section" data-page-node-id="gJe1BJbOOkHVWoNFNBUn83">
-      <div class="sidebar-section-label" data-page-node-id="504WYjAkaA0Z5pYyQ7Kk11">筛选模块</div>
-      <div class="filterbar" data-page-node-id="iGXqgUA1wIbRX6fFSglnJZ">
-        <div class="filter-item" data-page-node-id="FMh9wc9RAGBy5AJogRD3hO">
-          <label data-page-node-id="5hCA6BzffZFfafzLpv21Ze">📋 中心分类</label>
-          <div class="filter-bar-tags" id="dept-tabs" data-page-node-id="6XoE1MdEwi9jI7j0f0i31r">
-            <span class="filter-tag active" data-cat="__ALL__" data-page-node-id="TeEM8gZL2qUsKZGZkG7fAo">全部</span>
-            <span class="filter-tag" data-cat="医疗" data-page-node-id="JGs1AHWwooW8DQNGgTSDkp">医疗</span>
-            <span class="filter-tag" data-cat="齿科" data-page-node-id="6TzIsBoq7ca89KBGkiHnTp">齿科</span>
-            <span class="filter-tag" data-cat="医美" data-page-node-id="GJDHBN4xA0K18oNvgN9XDh">医美</span>
-            <span class="filter-tag" data-cat="眼科(含视光)" data-page-node-id="99OjdBwl26yaZvF5OCzi8d">眼科</span>
-            <span class="filter-tag" data-cat="体检(含健康管理)" data-page-node-id="xPfMBg9OzkkuuPSQiIbeAl">体检</span>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">筛选模块</div>
+      <div class="filterbar">
+        <div class="filter-item">
+          <label>📋 中心分类</label>
+          <div class="filter-bar-tags" id="dept-tabs">
+            <span class="filter-tag active" data-cat="__ALL__">全部</span>
+            <span class="filter-tag" data-cat="医疗">医疗</span>
+            <span class="filter-tag" data-cat="齿科">齿科</span>
+            <span class="filter-tag" data-cat="医美">医美</span>
+            <span class="filter-tag" data-cat="眼科(含视光)">眼科</span>
+            <span class="filter-tag" data-cat="体检(含健康管理)">体检</span>
           </div>
         </div>
-        <div class="filter-item" data-page-node-id="c5D9vvFXM3sAkFhTeH5rLY">
-          <label data-page-node-id="w0HtJHwo6lY2nte7q3EADT">🏥 具体中心</label>
-          <select id="dept-dropdown" disabled data-page-node-id="RhnCpkXgO4wqTnbw1qg8uJ">
-            <option value="__SUMMARY__" data-page-node-id="sdBntveZuBCUPDC7JxGRZk">— 全部汇总(全院) —</option>
+        <div class="filter-item">
+          <label>🏥 具体中心</label>
+          <select id="dept-dropdown" disabled>
+            <option value="__SUMMARY__">— 全部汇总(全院) —</option>
           </select>
         </div>
-        <div class="filter-summary" id="dept-summary" data-page-node-id="TwBGqAjqlinRcA397zQYIX"></div>
+        <div class="filter-summary" id="dept-summary"></div>
       </div>
     </div>
-    <div class="sidebar-section" data-page-node-id="Kvg7fOBJNC6vzN3JQVVEYf">
-      <div class="sidebar-section-label" data-page-node-id="LNoAsO6kTArRBeLaSLMU3F">数据模块</div>
-      <div class="tabs" data-page-node-id="yoZMVQmHTyQPvkHrizIeGy">
-        <div class="tab active" data-tab="0" data-page-node-id="3n29b9bywFqhdIJNGdHrCz"><span class="ti" data-page-node-id="iDoyDTGMBvAPSw4YyjnjjA">📊</span><span class="tt" data-page-node-id="2X5bHvWsdY9DCYMJC6unKh">概览</span></div>
-        <div class="tab" data-tab="1" data-page-node-id="cglxE7dYuJ5JRxFa077gi9"><span class="ti" data-page-node-id="Ek6GewvFvXCCoEFR90NXzp">📅</span><span class="tt" data-page-node-id="ZRXNZvngDqMDglyMJoyGeC">月度趋势</span></div>
-        <div class="tab" data-tab="2" data-page-node-id="BGG5DpaiERAEs9HKdvYhHI"><span class="ti" data-page-node-id="aLfqpmK7pwKcLDCMBko3FK">💰</span><span class="tt" data-page-node-id="jiXCMwSJHerLDkTy33DlpT">高价维修</span></div>
-        <div class="tab" data-tab="8" data-page-node-id="xBYyTUOc3Y4467o3WbQWzR"><span class="ti" data-page-node-id="Vfm6EUtN7ONJB8qL0MgfMF">⏱</span><span class="tt" data-page-node-id="QmsG6txUoRMRZtKyYln29a">处理时长</span></div>
-        <div class="tab" data-tab="3" data-page-node-id="tgEArIGE8eXMjzwD00JMQZ"><span class="ti" data-page-node-id="kTnFHubb2yNf74gAP4QNmJ">🔧</span><span class="tt" data-page-node-id="5XOETZFxODFfabI2ZmClCa">高频设备</span></div>
-        <div class="tab" data-tab="4" data-page-node-id="dN1wr5GY1eDRnyRbCE8qNP"><span class="ti" data-page-node-id="LrqWUgaPWVNDWqXoIuNuEv">🔄</span><span class="tt" data-page-node-id="Hx1zQGFz8ppvvtp8m6LD0w">返修分析</span></div>
-        <div class="tab" data-tab="5" data-page-node-id="ONMpGbOllbPxeoigsjIkiB"><span class="ti" data-page-node-id="3Pc4f9IXvaD2FgIUJTQafK">🏷</span><span class="tt" data-page-node-id="tk3lXDQQY4fiIqGUyMpTbv">故障分类</span></div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">数据模块</div>
+      <div class="tabs">
+        <div class="tab active" data-tab="0"><span class="ti">📊</span><span class="tt">概览</span></div>
+        <div class="tab" data-tab="1"><span class="ti">📅</span><span class="tt">月度趋势</span></div>
+        <div class="tab" data-tab="2"><span class="ti">💰</span><span class="tt">高价维修</span></div>
+        <div class="tab" data-tab="8"><span class="ti">⏱</span><span class="tt">处理时长</span></div>
+        <div class="tab" data-tab="3"><span class="ti">🔧</span><span class="tt">高频设备</span></div>
+        <div class="tab" data-tab="4"><span class="ti">🔄</span><span class="tt">返修分析</span></div>
+        <div class="tab" data-tab="5"><span class="ti">🏷</span><span class="tt">故障分类</span></div>
       </div>
     </div>
-    <div class="sidebar-section" data-page-node-id="cDuSEvsuYe742v91B9iyHO">
-      <div class="sidebar-section-label" data-page-node-id="umubmDz9bpIUVlUuVM3H4m">总结模块</div>
-      <div class="tabs" data-page-node-id="ED1EYw4Y4OwCQmW4DdNi9P">
-        <div class="tab" data-tab="6" data-page-node-id="GGTWDjfWBDD7oR0t7hV3Sn"><span class="ti" data-page-node-id="tpKMbBWzfbYqX7p3s6uS3S">💡</span><span class="tt" data-page-node-id="9IpHVkRGDCmjTHMxbOvDl1">智能建议</span></div>
-        <div class="tab" data-tab="7" data-page-node-id="WIojDHuradeKWH1PUJV4mF"><span class="ti" data-page-node-id="ODPkYQzimY0WXDrtjG3UJN">📄</span><span class="tt" data-page-node-id="rp47UnsE1OUVhx0B1ShZBQ">排除项</span></div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">总结模块</div>
+      <div class="tabs">
+        <div class="tab" data-tab="6"><span class="ti">💡</span><span class="tt">智能建议</span></div>
+        <div class="tab" data-tab="7"><span class="ti">📄</span><span class="tt">排除项</span></div>
       </div>
     </div>
   </aside>
-  <div class="main" data-page-node-id="t2MmFOw5opDUNYufLZDWQu">
-    <div class="banner" data-page-node-id="mlkxxREMdZBNgfEcB8drqC">
-      <h1 data-page-node-id="hE8UrgNWzdWBOOqok1492Q">医疗设备运维数据看板 · 2025 vs 2026 同期对比</h1>
-      <div class="banner-meta" data-page-node-id="uxiwgcBH270KlM6PLkXTwp">
-        <span class="item" data-page-node-id="9y6YKRQqJkNYTI5le4DHN5">口径：<b data-page-node-id="3w3tfauOJxnmUhfKazmXh3">2025年1-8月 vs 2026年1-8月</b></span>
-        <span class="item" data-page-node-id="Edg5yRLEPp5e3cEXTrCphJ">状态：<b data-page-node-id="nssFzRKAJ3yoTGQRKT1MAr">已结束 + 待验收</b></span>
-        <span class="item" data-page-node-id="GFzsT8xmAFxDX2Q4kOe65f">排除：<b data-page-node-id="wrB7AFwbF9FzS6EsLGT3ah">培训/改装/升级/延保/设备移机/设备转运</b></span>
-        <span class="cur-view-chip" data-page-node-id="EnlFvIxYGkrOkd6dLN3bmm">视角：<span id="cur-view" data-page-node-id="TMhZAdlPBHQNE2Rup5QhwY">全部汇总(全院)</span></span>
+  <div class="main">
+    <div class="banner">
+      <h1>医疗设备运维数据看板 · 2025 vs 2026 同期对比</h1>
+      <div class="banner-meta">
+        <span class="item">口径：<b>2025年1-8月 vs 2026年1-8月</b></span>
+        <span class="item">状态：<b>已结束 + 待验收</b></span>
+        <span class="item">排除：<b>培训/改装/升级/延保/设备移机/设备转运</b></span>
+        <span class="cur-view-chip">视角：<span id="cur-view">全部汇总(全院)</span></span>
       </div>
     </div>
-    <div class="kpi-row" id="kpi-row" data-page-node-id="XXI6DPksCgr3GKpGbl2h1z"></div>
-    <div class="content" data-page-node-id="aAe0WEanCLzNcrmpdsYqm6">
-      <div class="section" id="sec-0" data-page-node-id="wRtcWn5u8t3kanXW2h5MSq">
-        <div class="sec-header" onclick="toggle(0)" data-page-node-id="fN422SzH2Np7WGSeUz9FG8"><div class="sec-title" data-page-node-id="kEQGqDsOQ1Y9kNqwHx8Kvg">📊 院区与中心分布对比 <span id="title-suffix-0" style="font-weight:400;color:#6c757d;font-size:13px;" data-page-node-id="JnsUFdIfHHB4NEbxvLooWa"></span></div><div class="sec-toggle" id="tg-0" data-page-node-id="GJnnKAiGTzyxezQi54Rm9B">▼</div></div>
-        <div class="sec-divider" data-page-node-id="b6LlQG8E5moCVL1wXToFHB"></div>
-        <div class="sec-body" id="bd-0" data-page-node-id="3S9uZfsKWD0MhGf7KfxgDq">
-          <div class="chart-row col-2" data-page-node-id="MtPvjThOMaHggH4ZWHKbCB">
-            <div class="chart-box" data-page-node-id="lCkJZKDiUyIhB8hyyswyM2"><h4 data-page-node-id="uyiIvYPGpQeBuGZb6HagiA">院区维修单量对比</h4><div class="chart" id="c0_campus_count" style="height:260px" data-page-node-id="k131zDFPTdssdfbHDVNIlI"></div></div>
-            <div class="chart-box" data-page-node-id="w9FTAuHB4iI4EnbFqX0zxy"><h4 data-page-node-id="xKecjNGgIARgptJWYMDH9d">中心维修单量对比（五大类）</h4><div class="chart" id="c0_dept_count" style="height:260px" data-page-node-id="LTaQTpDPXsQnIS4Vdncx4E"></div></div>
-            <div class="chart-box" data-page-node-id="6OCwXAhdF3EYRJW8d0hfub"><h4 data-page-node-id="pv2gBFhEB4IGOjWkw97Ot3">院区维修费用对比（元）</h4><div class="chart" id="c0_campus_fee" style="height:260px" data-page-node-id="NxkPFpWHSQDcUMeDzuyr6t"></div></div>
-            <div class="chart-box" data-page-node-id="pdbifpSVF0VRDJIBvdrOB3"><h4 data-page-node-id="ot9WKUoXGpUlE8a9FpdFtT">中心维修费用对比（五大类，元）</h4><div class="chart" id="c0_dept_fee" style="height:260px" data-page-node-id="IBMhDikrbRRoEzqEu0sCSx"></div></div>
+    <div class="kpi-row" id="kpi-row"></div>
+    <div class="content">
+      <div class="section" id="sec-0">
+        <div class="sec-header" onclick="toggle(0)"><div class="sec-title">📊 院区与中心分布对比 <span id="title-suffix-0" style="font-weight:400;color:#6c757d;font-size:13px;"></span></div><div class="sec-toggle" id="tg-0">▼</div></div>
+        <div class="sec-divider"></div>
+        <div class="sec-body" id="bd-0">
+          <div class="chart-row col-2">
+            <div class="chart-box"><h4>院区维修单量对比</h4><div class="chart" id="c0_campus_count" style="height:260px"></div></div>
+            <div class="chart-box"><h4>中心维修单量对比（五大类）</h4><div class="chart" id="c0_dept_count" style="height:260px"></div></div>
+            <div class="chart-box"><h4>院区维修费用对比（元）</h4><div class="chart" id="c0_campus_fee" style="height:260px"></div></div>
+            <div class="chart-box"><h4>中心维修费用对比（五大类，元）</h4><div class="chart" id="c0_dept_fee" style="height:260px"></div></div>
           </div>
         </div>
       </div>
-      <div class="section" id="sec-1" style="display:none" data-page-node-id="sv7UBzq9SHgFRo5BFM8Y9J">
-        <div class="sec-header" onclick="toggle(1)" data-page-node-id="2ZPwuaNGB9C3yjqLmKwGu0"><div class="sec-title" data-page-node-id="iNZAlr1Z9WQPHfm02ITMjC">📅 月度维修趋势对比 <span id="title-suffix-1" style="font-weight:400;color:#6c757d;font-size:13px;" data-page-node-id="IKVEQv1nhZIQEtfpIVIFIB"></span></div><div class="sec-toggle" id="tg-1" data-page-node-id="bnTOHxGeyCs8Sf18Ou7eQO">▼</div></div>
-        <div class="sec-divider" data-page-node-id="8JoJlfCuQDiSIlBevIeYCW"></div>
-        <div class="sec-body" id="bd-1" data-page-node-id="U1cXHMeiMLTGNKHgzFHDge">
-          <div class="chart-row col-2" data-page-node-id="tWxmBgtD61NbPtIjHT0tP6">
-            <div class="chart-box" data-page-node-id="YVWuQM8fz7FwYjdmkaZpvO"><h4 data-page-node-id="bb3b8fx6lxuwBjR6i9Iiw4">月度维修单量同比</h4><div class="chart" id="c1_monthly_count" style="height:220px" data-page-node-id="0UsOJMn9vJbkLEKncxnC1p"></div></div>
-            <div class="chart-box" data-page-node-id="wyIaGbiZVLKmhy09J0CJZ7"><h4 data-page-node-id="gb12bsJH5SUPLM5VckeF93">月度维修费用同比（元）</h4><div class="chart" id="c1_monthly_fee" style="height:220px" data-page-node-id="Cwy6GXv4VaWTZIx0fm2MxV"></div></div>
-            <div class="chart-box" data-page-node-id="vUmbjmu6q3cJfPErcdCvIf"><h4 data-page-node-id="Ppevwe03z8SJQ2O7Ge8jXV">月度平均响应时长对比（小时）</h4><div class="chart" id="c1_monthly_resp" style="height:220px" data-page-node-id="OEspgrajzThyd72zetYD2l"></div></div>
-            <div class="chart-box" data-page-node-id="sy8AcmFVLUif2D7CP8lHN3"><h4 data-page-node-id="NnfgzsgsIMSm1QbhQ858NO">月度平均修复时长对比（小时）</h4><div class="chart" id="c1_monthly_fix" style="height:220px" data-page-node-id="fOnay5Y1u9ACuWu4Z5bjBg"></div></div>
+      <div class="section" id="sec-1" style="display:none">
+        <div class="sec-header" onclick="toggle(1)"><div class="sec-title">📅 月度维修趋势对比 <span id="title-suffix-1" style="font-weight:400;color:#6c757d;font-size:13px;"></span></div><div class="sec-toggle" id="tg-1">▼</div></div>
+        <div class="sec-divider"></div>
+        <div class="sec-body" id="bd-1">
+          <div class="chart-row col-2">
+            <div class="chart-box"><h4>月度维修单量同比</h4><div class="chart" id="c1_monthly_count" style="height:220px"></div></div>
+            <div class="chart-box"><h4>月度维修费用同比（元）</h4><div class="chart" id="c1_monthly_fee" style="height:220px"></div></div>
+            <div class="chart-box"><h4>月度平均响应时长对比（小时）</h4><div class="chart" id="c1_monthly_resp" style="height:220px"></div></div>
+            <div class="chart-box"><h4>月度平均修复时长对比（小时）</h4><div class="chart" id="c1_monthly_fix" style="height:220px"></div></div>
           </div>
         </div>
       </div>
-      <div class="section" id="sec-2" style="display:none" data-page-node-id="Vz8HpgFtb2guEpqKknoErL">
-        <div class="sec-header" onclick="toggle(2)" data-page-node-id="TUhHH1EQbxVk49Myz6DiHo"><div class="sec-title" data-page-node-id="eQYDIetjMGq4mPknVjvqJH">💰 高价维修工单对比 <span id="title-suffix-2" style="font-weight:400;color:#6c757d;font-size:13px;" data-page-node-id="ZUG5K2D75AjQOlm6H47CFy"></span></div><div class="sec-toggle" id="tg-2" data-page-node-id="AfFPf7vqd8iXSOZdKkOkiY">▼</div></div>
-        <div class="sec-divider" data-page-node-id="biq1fxUGslWuPaO78nozDE"></div>
-        <div class="sec-body" id="bd-2" data-page-node-id="PxhJEi8tIvT5oNOftDCSlO">
-          <div class="chart-row col-1" data-page-node-id="ZmIzCRYikiEeo2PfgaXAYk">
-            <div class="chart-box" data-page-node-id="IDDizKWUn0Z3tsPp4iahnu">
-              <h4 data-page-node-id="E9Y4GRWqj8hkfF5HACjjxx">单笔费用 TOP10 工单对比表（元）</h4>
-              <div id="c2_table" data-page-node-id="xCYYnmAPoZCpiEmEtignwD"></div>
+      <div class="section" id="sec-2" style="display:none">
+        <div class="sec-header" onclick="toggle(2)"><div class="sec-title">💰 高价维修工单对比 <span id="title-suffix-2" style="font-weight:400;color:#6c757d;font-size:13px;"></span></div><div class="sec-toggle" id="tg-2">▼</div></div>
+        <div class="sec-divider"></div>
+        <div class="sec-body" id="bd-2">
+          <div class="chart-row col-1">
+            <div class="chart-box">
+              <h4>单笔费用 TOP10 工单对比表（元）</h4>
+              <div id="c2_table"></div>
             </div>
           </div>
-          <div class="chart-row col-2" data-page-node-id="PEeLnzZbVtDw8xaQVJgbhu">
-            <div class="chart-box" data-page-node-id="yN7RG7oPIxe9aaBLeRCCRc"><h4 data-page-node-id="54jNb0FvXbOjWHGCYNEfCn">2025年设备类别费用占比</h4><div class="chart" id="c2_catfee_25" style="height:300px" data-page-node-id="BnRflyyPQtRdec6U9XeYH1"></div></div>
-            <div class="chart-box" data-page-node-id="7BKX2NoDoMDa9KhUG1xezW"><h4 data-page-node-id="OcVAlihj4cgU8NGkWMOIX0">2026年设备类别费用占比</h4><div class="chart" id="c2_catfee_26" style="height:300px" data-page-node-id="1xoW3Ebio0yDys3VhqrrhA"></div></div>
+          <div class="chart-row col-2">
+            <div class="chart-box"><h4>2025年设备类别费用占比</h4><div class="chart" id="c2_catfee_25" style="height:300px"></div></div>
+            <div class="chart-box"><h4>2026年设备类别费用占比</h4><div class="chart" id="c2_catfee_26" style="height:300px"></div></div>
           </div>
         </div>
       </div>
-      <div class="section" id="sec-8" style="display:none" data-page-node-id="1E3bZ5jRkcMTd65fmWCu38">
-        <div class="sec-header" onclick="toggle(8)" data-page-node-id="lZEq922BRIWh2qmidUBqZE"><div class="sec-title" data-page-node-id="L4oRyiNOtIoNm8m1U08vG2">⏱ 处理时长分析 <span id="title-suffix-8" style="font-weight:400;color:#6c757d;font-size:13px;" data-page-node-id="yKEdNj7B5O6GkbpsMAXAkx"></span></div><div class="sec-toggle" id="tg-8" data-page-node-id="jJfHEuAxQG2phyBi9Pwhpw">▼</div></div>
-        <div class="sec-divider" data-page-node-id="qF313DbuaLuADkxz0BQXaA"></div>
-        <div class="sec-body" id="bd-8" data-page-node-id="5rgGJS9rYJp9A4Hf10PqsX">
-          <div class="chart-row col-1" data-page-node-id="nZRCqgca95GIWIkAqQBH4h">
-            <div class="chart-box" data-page-node-id="444eq9Zzh0sYvjqu1AoED3">
-              <h4 data-page-node-id="BSqP9jySUxGu09iJpjIcDC">最长响应/修复时长 TOP10 对比表（小时）</h4>
-              <div id="c8_table" data-page-node-id="tlb2EezAQa7gxldC1fQkZK"></div>
+      <div class="section" id="sec-8" style="display:none">
+        <div class="sec-header" onclick="toggle(8)"><div class="sec-title">⏱ 处理时长分析 <span id="title-suffix-8" style="font-weight:400;color:#6c757d;font-size:13px;"></span></div><div class="sec-toggle" id="tg-8">▼</div></div>
+        <div class="sec-divider"></div>
+        <div class="sec-body" id="bd-8">
+          <div class="chart-row col-1">
+            <div class="chart-box">
+              <h4>最长响应/修复时长 TOP10 对比表（小时）</h4>
+              <div id="c8_table"></div>
             </div>
           </div>
-          <div class="chart-row col-1" data-page-node-id="A32VhkD0sAMZvklVz0eOwE">
-            <div class="chart-box" data-page-node-id="0krBQg9NGzSwGeIGZEKk4i">
-              <h4 data-page-node-id="2kzxxdlaskpXHbYyZD9Uyg">处理时长散点分布（x=排名 1~10，y=时长 h）</h4>
-              <div class="chart" id="c8_scatter" style="height:380px" data-page-node-id="aFcNkCQc5dpsWAectQcJUz"></div>
+          <div class="chart-row col-1">
+            <div class="chart-box">
+              <h4>处理时长散点分布（x=排名 1~10，y=时长 h）</h4>
+              <div class="chart" id="c8_scatter" style="height:380px"></div>
             </div>
           </div>
         </div>
       </div>
-      <div class="section" id="sec-3" style="display:none" data-page-node-id="Q9cV5emfBPeWhAmnOY7K3X">
-        <div class="sec-header" onclick="toggle(3)" data-page-node-id="FRUApJOMKK6nHH3BMw7HCm"><div class="sec-title" data-page-node-id="Xc9i8ODnpsqb2Q4EEaahy8">🔧 高频维修与返修设备 <span id="title-suffix-3" style="font-weight:400;color:#6c757d;font-size:13px;" data-page-node-id="VHTOyzLWLwD2yJvCLvnFmO"></span></div><div class="sec-toggle" id="tg-3" data-page-node-id="Yq5gi9XUhqcRHgDGSrJKpU">▼</div></div>
-        <div class="sec-divider" data-page-node-id="FaSSgzKMCVeMsfpYWm3DvG"></div>
-        <div class="sec-body" id="bd-3" data-page-node-id="N9SwJQWC9EPOyMke8GfrBS">
-          <div class="chart-row col-2" data-page-node-id="kuWSXXgww6cK5dv5CaQMW3">
-            <div class="chart-box" data-page-node-id="EAtxL0fi926LHaLeUdgZpB"><h4 data-page-node-id="nAI6a1MzsyFs1GUGdKmPCB">高频维修设备（2025年同期，按设备名称）</h4><div class="chart" id="c3_top_device_25" style="height:260px" data-page-node-id="T87QIENpcTiUnfHP5buDzk"></div></div>
-            <div class="chart-box" data-page-node-id="vL2ch9H8wpakRXulCX4fIE"><h4 data-page-node-id="OJvvcCDJWHsrEEKdDl5s6U">高频维修设备（2026年同期，按设备名称）</h4><div class="chart" id="c3_top_device_26" style="height:260px" data-page-node-id="4vfhU7yB1UoFggOJh3FoYz"></div></div>
-            <div class="chart-box" data-page-node-id="xg6nLJudXAEYXzaTepdrQJ"><h4 data-page-node-id="lWz2ZoDgpUpxwn2SiS4Tog">高频返修设备（2025年同期，同一资产编码维修≥2次）</h4><div class="chart" id="c3_top_rework_25" style="height:260px" data-page-node-id="PiEGqKaJJyziBCfGjjPoJj"></div></div>
-            <div class="chart-box" data-page-node-id="Fc3eGCMBdUBtyfHiMGSZEo"><h4 data-page-node-id="AQlXa4qccwbohzP1b0TC0x">高频返修设备（2026年同期，同一资产编码维修≥2次）</h4><div class="chart" id="c3_top_rework_26" style="height:260px" data-page-node-id="qGzRukYYG39qBxiteDSS8q"></div></div>
+      <div class="section" id="sec-3" style="display:none">
+        <div class="sec-header" onclick="toggle(3)"><div class="sec-title">🔧 高频维修与返修设备 <span id="title-suffix-3" style="font-weight:400;color:#6c757d;font-size:13px;"></span></div><div class="sec-toggle" id="tg-3">▼</div></div>
+        <div class="sec-divider"></div>
+        <div class="sec-body" id="bd-3">
+          <div class="chart-row col-2">
+            <div class="chart-box"><h4>高频维修设备（2025年同期，按设备名称）</h4><div class="chart" id="c3_top_device_25" style="height:260px"></div></div>
+            <div class="chart-box"><h4>高频维修设备（2026年同期，按设备名称）</h4><div class="chart" id="c3_top_device_26" style="height:260px"></div></div>
+            <div class="chart-box"><h4>高频返修设备（2025年同期，同一资产编码维修≥2次）</h4><div class="chart" id="c3_top_rework_25" style="height:260px"></div></div>
+            <div class="chart-box"><h4>高频返修设备（2026年同期，同一资产编码维修≥2次）</h4><div class="chart" id="c3_top_rework_26" style="height:260px"></div></div>
           </div>
         </div>
       </div>
-      <div class="section" id="sec-4" style="display:none" data-page-node-id="MZGPgsX8sxApRnTbeVFXiL">
-        <div class="sec-header" onclick="toggle(4)" data-page-node-id="JStleWglGVwwwbAqowfBFK"><div class="sec-title" data-page-node-id="8fwlIo2G92I6vCjIv61tNE">🔄 返修次数分析 <span id="title-suffix-4" style="font-weight:400;color:#6c757d;font-size:13px;" data-page-node-id="lX3NaKm60Q0JDlB2t5fB5R"></span></div><div class="sec-toggle" id="tg-4" data-page-node-id="AEBcdJfRIf562dwUJBJHMz">▼</div></div>
-        <div class="sec-divider" data-page-node-id="8ri9Yy5wZUUmvBxyclMFxR"></div>
-        <div class="sec-body" id="bd-4" data-page-node-id="Fs4rwfL2go6Vn1Sr1pLMec">
-          <div class="chart-row col-2" data-page-node-id="52lk5C7nm74cH5efpy6mA9">
-            <div class="chart-box" data-page-node-id="TSS3jERVza7VMXwDDDvBGh"><h4 data-page-node-id="jT5fXlEqR9Sbi2A8vL2mA0">返修次数分布（排除YLSB）</h4><div class="chart" id="c4_rework_dist" style="height:240px" data-page-node-id="tCm8oxJ5u1AyPq8JLFJajk"></div></div>
-            <div class="chart-box" data-page-node-id="BlXv9M7MfTvRIT1Av5agjf"><h4 data-page-node-id="mGLUXOe3XEoxX7O9hdwZIK">月度平均当月返修次数</h4><div class="chart" id="c4_monthly_rework_avg" style="height:240px" data-page-node-id="rRnGWCFSvasciqNXt3r8m3"></div></div>
-            <div class="chart-box" data-page-node-id="CElt7RDbkwZ5UmiwVthqJi"><h4 data-page-node-id="ioNqXwEKvCa9n5FqMv7eLg">月度返修设备台数</h4><div class="chart" id="c4_monthly_asset" style="height:240px" data-page-node-id="n5VkBEduKiHAxmkmkTrj8q"></div></div>
-            <div class="chart-box" data-page-node-id="mns2IzuDuA1m3xi3blEX8s"><h4 data-page-node-id="iN9UFBe25ifXwmYEao9xfj">返修设备维修费用TOP10（2025 vs 2026）</h4><div class="chart" id="c4_rework_fee" style="height:240px" data-page-node-id="COMdOGYrJL9zYTGWxrrWxr"></div></div>
+      <div class="section" id="sec-4" style="display:none">
+        <div class="sec-header" onclick="toggle(4)"><div class="sec-title">🔄 返修次数分析 <span id="title-suffix-4" style="font-weight:400;color:#6c757d;font-size:13px;"></span></div><div class="sec-toggle" id="tg-4">▼</div></div>
+        <div class="sec-divider"></div>
+        <div class="sec-body" id="bd-4">
+          <div class="chart-row col-2">
+            <div class="chart-box"><h4>返修次数分布（排除YLSB）</h4><div class="chart" id="c4_rework_dist" style="height:240px"></div></div>
+            <div class="chart-box"><h4>月度平均当月返修次数</h4><div class="chart" id="c4_monthly_rework_avg" style="height:240px"></div></div>
+            <div class="chart-box"><h4>月度返修设备台数</h4><div class="chart" id="c4_monthly_asset" style="height:240px"></div></div>
+            <div class="chart-box"><h4>返修设备维修费用TOP10（2025 vs 2026）</h4><div class="chart" id="c4_rework_fee" style="height:240px"></div></div>
           </div>
         </div>
       </div>
-      <div class="section" id="sec-5" style="display:none" data-page-node-id="wFt8VPSPlfaqI11MOo8laP">
-        <div class="sec-header" onclick="toggle(5)" data-page-node-id="YDCQEyXJCCNDideh4hZwxH"><div class="sec-title" data-page-node-id="FffXToCKcpnDiUf2YFt2kg">🏷 故障分类分布对比 <span id="title-suffix-5" style="font-weight:400;color:#6c757d;font-size:13px;" data-page-node-id="t16zjF2OyFAnojdfkS140P"></span></div><div class="sec-toggle" id="tg-5" data-page-node-id="5RAQfpQzfBHtf4qqKDV9Wl">▼</div></div>
-        <div class="sec-divider" data-page-node-id="H5vhG8rtO6ZiJB7kIrWA7L"></div>
-        <div class="sec-body" id="bd-5" data-page-node-id="J5O9K3WtgpJBAHyJauvv8r">
-          <div class="chart-row col-1" data-page-node-id="A64HRZZYtPYn4mJRtSCxJt">
-            <div class="chart-box" data-page-node-id="jooz7z4gz1pH4yAGpgTD5D"><h4 data-page-node-id="3jmraS2JGb3biMqWbBGFwY">原始故障原因分类对比（字段值统计）</h4><div class="chart" id="c5_old_fault" style="height:300px" data-page-node-id="EE8dpFg5Ed9vcOSIs7ohsU"></div></div>
-            <div class="chart-box" data-page-node-id="Eyw9HtIG7nPfvWeYxsFH7p"><h4 data-page-node-id="1StnikOWSlTdx9LhcVI6CT">新故障分类分布对比（AI三维分类体系）</h4><div class="chart" id="c5_new_fault" style="height:300px" data-page-node-id="ubHCh2N5dde9EKsiLr6BzN"></div></div>
+      <div class="section" id="sec-5" style="display:none">
+        <div class="sec-header" onclick="toggle(5)"><div class="sec-title">🏷 故障分类分布对比 <span id="title-suffix-5" style="font-weight:400;color:#6c757d;font-size:13px;"></span></div><div class="sec-toggle" id="tg-5">▼</div></div>
+        <div class="sec-divider"></div>
+        <div class="sec-body" id="bd-5">
+          <div class="chart-row col-1">
+            <div class="chart-box"><h4>原始故障原因分类对比（字段值统计）</h4><div class="chart" id="c5_old_fault" style="height:300px"></div></div>
+            <div class="chart-box"><h4>新故障分类分布对比（AI三维分类体系）</h4><div class="chart" id="c5_new_fault" style="height:300px"></div></div>
           </div>
         </div>
       </div>
-      <div class="section" id="sec-6" style="display:none" data-page-node-id="QAIwMiMZpmiWfPvybxgUS7">
-        <div class="sec-header" onclick="toggle(6)" data-page-node-id="kkJRotLh8cHxvzr6eV668k"><div class="sec-title" data-page-node-id="wQzH8EzBSLf18jio9e35Fz">💡 看板建议（基于本期数据智能总结）</div><div class="sec-toggle" id="tg-6" data-page-node-id="TpcPzder2dKki4bmAWJDIO">▼</div></div>
-        <div class="sec-divider" data-page-node-id="rIhPYjVVTPsuRCCaD7GzsW"></div>
-        <div class="sec-body" id="bd-6" data-page-node-id="m7SqxJxHUdjssHl4ytGIM1">
+      <div class="section" id="sec-6" style="display:none">
+        <div class="sec-header" onclick="toggle(6)"><div class="sec-title">💡 看板建议（基于本期数据智能总结）</div><div class="sec-toggle" id="tg-6">▼</div></div>
+        <div class="sec-divider"></div>
+        <div class="sec-body" id="bd-6">
           
-      <div class="advice-intro" data-page-node-id="iGDdXomIZUwWvJ6dZXrbae">
-        以下建议由 AI 基于本期同期对比数据自动生成，每条含「标签 + 数据支撑 + 具体动作」。<br data-page-node-id="hhuIE0QAHgaYNt9mFRnz4a">
+      <div class="advice-intro">
+        以下建议由 AI 基于本期同期对比数据自动生成，每条含「标签 + 数据支撑 + 具体动作」。<br>
         标签含 4 类：
-        <div class="advice-tags" data-page-node-id="WwXNVYiGXCEr0o43U5WdBl">
-          <span class="advice-tag tag-saving" data-page-node-id="ayXdiBujumdGSy8rmHrI6x">省钱提效</span>
-          <span class="advice-tag tag-purchase" data-page-node-id="J49phY1gYEc6Pc5mBrYFKh">采购注意</span>
-          <span class="advice-tag tag-flow" data-page-node-id="Qsi7PAlhsgpeTehCgM54Pk">流程优化</span>
-          <span class="advice-tag tag-pitfall" data-page-node-id="RK4XYB4HaVCo9FjQV3unhF">维保避坑</span>
+        <div class="advice-tags">
+          <span class="advice-tag tag-saving">省钱提效</span>
+          <span class="advice-tag tag-purchase">采购注意</span>
+          <span class="advice-tag tag-flow">流程优化</span>
+          <span class="advice-tag tag-pitfall">维保避坑</span>
         </div>
       </div>
-      <div class="advice-tabs" id="advice-tabs" data-page-node-id="rV4roVAOv7Xcu4bmEctku2">
-        <span class="advice-tab active" data-advice="price" data-page-node-id="6xk9kSeooDxTo25GnmwmlI">💰 维修价格（费用）</span>
-        <span class="advice-tab" data-advice="efficiency" data-page-node-id="iUlWA98DiDiEWGWDCfcvIK">⏱ 服务效率（时长）</span>
-        <span class="advice-tab" data-advice="quality" data-page-node-id="AtXUEZl7UdgNve6FPzqg0r">🔧 质量情况（返修）</span>
+      <div class="advice-tabs" id="advice-tabs">
+        <span class="advice-tab active" data-advice="price">💰 维修价格（费用）</span>
+        <span class="advice-tab" data-advice="efficiency">⏱ 服务效率（时长）</span>
+        <span class="advice-tab" data-advice="quality">🔧 质量情况（返修）</span>
       </div>
-      <div class="advice-panel" data-advice-panel="price" data-page-node-id="TYbUG9KiintOeAGo8IHPu4">
-        <div class="advice-card" data-page-node-id="KILsvgMSOnFiesDUXPYnVl">
-          <span class="advice-tag tag-saving" data-page-node-id="oYZbKXM7A0XaDQw1iDt8sg">省钱提效</span>
-          <div class="advice-title" data-page-node-id="kjmgSvdW69cjs61RhzL5P4">P1 · 总费用 +135.2% 远超单量 +4.3%，单均翻倍</div>
-          <div class="advice-data" data-page-node-id="gSnP9TCsr96p1lCsh34J38">总费用 58.2万→137.0万 元（+135.2%），维修单量 996→1039 单（+4.3%），单均费用 584→1,318 元（+125.5%）。</div>
-          <div class="advice-action" data-page-node-id="om1TcKYSRby8nbZJFoAldF"><ol data-page-node-id="IrRXtmGH6bBP5eI4j5ZBHm">
-            <li data-page-node-id="KwkCF2RVRcIFiaVrMQFIBy">拉出 2026 年单笔费用 TOP30 找结构性涨价（配件/工时/外协）</li>
-            <li data-page-node-id="ki3BNvD8SkFzOGE71gAyKz">对单均 &gt;5,000 元的工单建立单价审核机制，要求附至少 2 套维修方案比价</li>
-            <li data-page-node-id="NGfdKfPfNhnddDNZYBBagN">下次采购同类配件时询 3 家以上比价，建立配件价格基线库</li>
+      <div class="advice-panel" data-advice-panel="price">
+        <div class="advice-card">
+          <span class="advice-tag tag-saving">省钱提效</span>
+          <div class="advice-title">P1 · 总费用 +135.2% 远超单量 +4.3%，单均翻倍</div>
+          <div class="advice-data">总费用 58.2万→137.0万 元（+135.2%），维修单量 996→1039 单（+4.3%），单均费用 584→1,318 元（+125.5%）。</div>
+          <div class="advice-action"><ol>
+            <li>拉出 2026 年单笔费用 TOP30 找结构性涨价（配件/工时/外协）</li>
+            <li>对单均 &gt;5,000 元的工单建立单价审核机制，要求附至少 2 套维修方案比价</li>
+            <li>下次采购同类配件时询 3 家以上比价，建立配件价格基线库</li>
           </ol></div>
         </div>
-        <div class="advice-card" data-page-node-id="eyohvgdiEFXot8Zd1Gxt0m">
-          <span class="advice-tag tag-purchase" data-page-node-id="msN2AbMLEFAKjSGDgIMpYB">采购注意</span>
-          <div class="advice-title" data-page-node-id="7kGrOiTj0c93iiTlBpmpKz">P2 · 单均节省 +42.6% 是假象，节省率从 73.3% 降至 46.3%</div>
-          <div class="advice-data" data-page-node-id="jQ4j5tChLNjdQxDC6z2CFl">单均节省 429→611 元，但节省率 73.3%→46.3%（-27.0pp）。</div>
-          <div class="advice-action" data-page-node-id="Qf5eGmwYUK6IB1H0UwJqyt"><ol data-page-node-id="vjjtQrHjaf2WfFILvkKIkp">
-            <li data-page-node-id="o5uBG6wsWBLaIdmPfVLGQy">单均节省主要来自工程师自修节约的人工/差旅，不应作为采购降本的乐观依据</li>
-            <li data-page-node-id="kPWVB3PJtYqbmBVYSozb6U">对比 2025/2026 同型号设备的「维修费+外购费」组合价，识别真实成本上行</li>
-            <li data-page-node-id="MO2FVLDMLcu9SCa5oHsPxD">把「节省率」加入采购评标 KPI，遏制「单均节省」包装的伪降本</li>
+        <div class="advice-card">
+          <span class="advice-tag tag-purchase">采购注意</span>
+          <div class="advice-title">P2 · 单均节省 +42.6% 是假象，节省率从 73.3% 降至 46.3%</div>
+          <div class="advice-data">单均节省 429→611 元，但节省率 73.3%→46.3%（-27.0pp）。</div>
+          <div class="advice-action"><ol>
+            <li>单均节省主要来自工程师自修节约的人工/差旅，不应作为采购降本的乐观依据</li>
+            <li>对比 2025/2026 同型号设备的「维修费+外购费」组合价，识别真实成本上行</li>
+            <li>把「节省率」加入采购评标 KPI，遏制「单均节省」包装的伪降本</li>
           </ol></div>
         </div>
-        <div class="advice-card" data-page-node-id="QhGWo8XcUbLcgyWCnkYQKz">
-          <span class="advice-tag tag-purchase" data-page-node-id="jMqToHNQvtEsWhovNW73HM">采购注意</span>
-          <div class="advice-title" data-page-node-id="210ykQ6qtrWSdd81pAvt67">P3 · 齿科单量占比 57%→60%，齿科总费用 +72.6% 集中爆发</div>
-          <div class="advice-data" data-page-node-id="PcCEbGzlpGQ5aMxid4csY2">齿科维修 568→622 单，齿科总费用 17.0万→29.4万 元（+72.6%），齿科单均费用 300→472 元；齿科 40% 维修集中在 INTEGO 牙椅系列。</div>
-          <div class="advice-action" data-page-node-id="vyDO3WsBVSwU0CFLTefmsS"><ol data-page-node-id="GT2E388iUCzFhZNeVPeC6I">
-            <li data-page-node-id="nliIqFTAv1d60nLu3VHxHj">与（西诺德）谈年度维保打包价，用 25/26 实际数据作议价筹码</li>
-            <li data-page-node-id="ALI1nKctVdfTdea9cZNwJz">评估牙椅管路水路/电气控制类故障的配件国产替代可行性</li>
-            <li data-page-node-id="mj6Wt6v9TaGDvPbXSqkZ52">把齿科 TOP3 故障模式纳入新购牙椅技术规格的扣分项</li>
-          </ol></div>
-        </div>
-      </div>
-      <div class="advice-panel" data-advice-panel="efficiency" style="display:none;" data-page-node-id="WaF0VUrf0ACeCp0KfJvutp">
-        <div class="advice-card" data-page-node-id="CTSTWBcHyEb0iVD4q52JAJ">
-          <span class="advice-tag tag-flow" data-page-node-id="SGdag5t6Ke6ji0uMftJmiv">流程优化</span>
-          <div class="advice-title" data-page-node-id="HnY45AKKxRwwYIC8EBbbFA">E1 · 平均响应时长 +138.8%，本期最严重恶化项</div>
-          <div class="advice-data" data-page-node-id="XD55XFadns4QAAi0cgTocX">响应 3.97→9.48h（已按"响应≤修复"清洗），月度看 1 月份 2.41→16.5h 极端恶化。</div>
-          <div class="advice-action" data-page-node-id="NSwh5tFhxnY1k1iqGuIAcC"><ol data-page-node-id="lTgdFRugzhr8iCE5LBFZcB">
-            <li data-page-node-id="YXYZwcRpzXX50ywGbk5fxq">工单 15 分钟内派单 KPI 纳入工程师月度考核</li>
-            <li data-page-node-id="kC8GaCOCeVtDBmXlwIKXCf">区分「工作日响应」vs「节假日响应」分别统计，识别是排班问题还是处理能力问题</li>
-            <li data-page-node-id="5EGU9F53BGSBJZFFcuHoDP">工单池超过阈值（如 ≥15 单/工程师）时启动备班或外协</li>
-          </ol></div>
-        </div>
-        <div class="advice-card" data-page-node-id="dd7OH5GBTJKg9lIC441s7T">
-          <span class="advice-tag tag-flow" data-page-node-id="lp5hLn7wGxfMEsaYSczG4e">流程优化</span>
-          <div class="advice-title" data-page-node-id="1IAELmVbbahv1DUdq2Vm8H">E2 · 修复 78.46h 是响应 9.48h 的 8 倍，配件等待是主因</div>
-          <div class="advice-data" data-page-node-id="6jQeGkZIzCs4ii3h0n2qVd">响应 9.48h vs 修复 78.46h，剪刀差 8 倍。</div>
-          <div class="advice-action" data-page-node-id="5V71PGnHsnIJiodDELGtSY"><ol data-page-node-id="ztBoMkhugs4X8Bzv0kylsG">
-            <li data-page-node-id="1hTMpFiDTSrDAUCZw78D6A">建立配件库存预警线（按 TOP20 配件月均消耗的 1.5 倍备货）</li>
-            <li data-page-node-id="jZBidlmbc82lYfPjxWQqIv">常用配件（牙椅管路/电磁阀/灯珠）签季度寄售协议缩短到货时间</li>
-            <li data-page-node-id="geRqm1ccz2E4Xus3jCM3o0">配件到货时长单独统计加入工程师/采购考核</li>
+        <div class="advice-card">
+          <span class="advice-tag tag-purchase">采购注意</span>
+          <div class="advice-title">P3 · 齿科单量占比 57%→60%，齿科总费用 +72.6% 集中爆发</div>
+          <div class="advice-data">齿科维修 568→622 单，齿科总费用 17.0万→29.4万 元（+72.6%），齿科单均费用 300→472 元；齿科 40% 维修集中在 INTEGO 牙椅系列。</div>
+          <div class="advice-action"><ol>
+            <li>与（西诺德）谈年度维保打包价，用 25/26 实际数据作议价筹码</li>
+            <li>评估牙椅管路水路/电气控制类故障的配件国产替代可行性</li>
+            <li>把齿科 TOP3 故障模式纳入新购牙椅技术规格的扣分项</li>
           </ol></div>
         </div>
       </div>
-      <div class="advice-panel" data-advice-panel="quality" style="display:none;" data-page-node-id="GPszwFjYadhWCCKV76QMwt">
-        <div class="advice-card" data-page-node-id="VfFQfQ3r7rMxsE4F39RolV">
-          <span class="advice-tag tag-pitfall" data-page-node-id="L5bTJ1EI0IpoUBkBhfvmeR">维保避坑</span>
-          <div class="advice-title" data-page-node-id="khYBGbfRcxRoFgc2RFvrtV">Q1 · 返修均值微降 ▼ 2.1% 但 TOP 资产 8→11 次仍在恶化</div>
-          <div class="advice-data" data-page-node-id="YeyEncLgcGyp8BfV9HMkbT">返修 2.83→2.77 次/台（-2.1%），但 2026 TOP 资产最高 11 次（ZCBM-07YLSB0000004165）。</div>
-          <div class="advice-action" data-page-node-id="0ziM1l7zQF9ZFm2YCOhNsb"><ol data-page-node-id="FcrDsuxaENVAaSELPFZXZJ">
-            <li data-page-node-id="1aDFlstH8px9ih7pU0tJ0A">对返修≥4 次的资产强制纳入「评估报废/大修」评审，不再无限维修</li>
-            <li data-page-node-id="uGWIxbfNvaFTPCkquZHVHY">同一资产 3 个月内返修≥2 次触发厂商追责条款</li>
-            <li data-page-node-id="4QLCaotoYwut9yDpXzcJK6">建立返修次数 ≥3 的资产预警看板，月度跟踪</li>
+      <div class="advice-panel" data-advice-panel="efficiency" style="display:none;">
+        <div class="advice-card">
+          <span class="advice-tag tag-flow">流程优化</span>
+          <div class="advice-title">E1 · 平均响应时长 +138.8%，本期最严重恶化项</div>
+          <div class="advice-data">响应 3.97→9.48h（已按"响应≤修复"清洗），月度看 1 月份 2.41→16.5h 极端恶化。</div>
+          <div class="advice-action"><ol>
+            <li>工单 15 分钟内派单 KPI 纳入工程师月度考核</li>
+            <li>区分「工作日响应」vs「节假日响应」分别统计，识别是排班问题还是处理能力问题</li>
+            <li>工单池超过阈值（如 ≥15 单/工程师）时启动备班或外协</li>
           </ol></div>
         </div>
-        <div class="advice-card" data-page-node-id="lD7SXUatZhYwOP5iHbdU1F">
-          <span class="advice-tag tag-purchase" data-page-node-id="ia5qLt5F1dKOyFhBjOELCv">采购注意</span>
-          <div class="advice-title" data-page-node-id="QxOxpiRdLAK9MyA36SV3Yp">Q2 · 牙椅 INTEGO 占高频维修 TOP10 中 5→4 席，质量问题集中</div>
-          <div class="advice-data" data-page-node-id="rnBwyHfVsM5AeABHX2Ccam">2025/2026 TOP10 设备中分别 5、4 个为 INTEGO/C8+ 牙椅。</div>
-          <div class="advice-action" data-page-node-id="tqckrxwh2JoauQJPdiBkUP"><ol data-page-node-id="7f8xizTMUW1OuwGN8rEwDs">
-            <li data-page-node-id="UTikLODRHAfK8qmF4jTLDI">新购牙椅时把「3 年内同型号返修率 &lt;15%」写入采购技术规格</li>
-            <li data-page-node-id="RCQyH8Lv3V8PYxF6luzR1y">对比国产牙椅（同期单量/单均费用），用真实数据决定下一轮集采品牌</li>
-            <li data-page-node-id="Jj2iTqN7xpC6f83Xx37l1q">把 INTEGO 高频故障点（管路/电气）作为新购验收必检项</li>
+        <div class="advice-card">
+          <span class="advice-tag tag-flow">流程优化</span>
+          <div class="advice-title">E2 · 修复 78.46h 是响应 9.48h 的 8 倍，配件等待是主因</div>
+          <div class="advice-data">响应 9.48h vs 修复 78.46h，剪刀差 8 倍。</div>
+          <div class="advice-action"><ol>
+            <li>建立配件库存预警线（按 TOP20 配件月均消耗的 1.5 倍备货）</li>
+            <li>常用配件（牙椅管路/电磁阀/灯珠）签季度寄售协议缩短到货时间</li>
+            <li>配件到货时长单独统计加入工程师/采购考核</li>
           </ol></div>
         </div>
-        <div class="advice-card" data-page-node-id="0Q2ZCTByxFvT5FhITRWlO8">
-          <span class="advice-tag tag-pitfall" data-page-node-id="7AUZUt0AmBarF4lJ2XqhYy">维保避坑</span>
-          <div class="advice-title" data-page-node-id="XZLjMhUM8yQSTA600JvbEp">Q3 · 老化-预期之外 -23.3% / 预期之内 110.8%，警惕被滥用</div>
-          <div class="advice-data" data-page-node-id="Z0AG8K0FStyTYGYtv1psVO">原始故障原因分类，2025「老化-预期之外」421 单 → 2026 仅 323 单；「老化-预期之内」120→253 单。</div>
-          <div class="advice-action" data-page-node-id="aDrjpWxlhEtpYoAhJA71B7"><ol data-page-node-id="ZaLrDbK30mg3tDXDZBXD5H">
-            <li data-page-node-id="i9Z2P6O3UllMLleAlvtila">反映「老化故障正在被合理归类」是好事，但要警惕「预期之内」被滥用 — 抽样 30 单确认确实是设计寿命到期而非维保失职</li>
-            <li data-page-node-id="FaV8nQOjF5tndAGcXofxx5">建立设备使用年限台账，到龄前 6 个月启动预防性更换评估</li>
-            <li data-page-node-id="gJ9kqMWCHwx0PacarGSD2g">把「老化-预期之内」维保工单的成本纳入设备全生命周期成本核算</li>
+      </div>
+      <div class="advice-panel" data-advice-panel="quality" style="display:none;">
+        <div class="advice-card">
+          <span class="advice-tag tag-pitfall">维保避坑</span>
+          <div class="advice-title">Q1 · 返修均值微降 ▼ 2.1% 但 TOP 资产 8→11 次仍在恶化</div>
+          <div class="advice-data">返修 2.83→2.77 次/台（-2.1%），但 2026 TOP 资产最高 11 次（ZCBM-07YLSB0000004165）。</div>
+          <div class="advice-action"><ol>
+            <li>对返修≥4 次的资产强制纳入「评估报废/大修」评审，不再无限维修</li>
+            <li>同一资产 3 个月内返修≥2 次触发厂商追责条款</li>
+            <li>建立返修次数 ≥3 的资产预警看板，月度跟踪</li>
+          </ol></div>
+        </div>
+        <div class="advice-card">
+          <span class="advice-tag tag-purchase">采购注意</span>
+          <div class="advice-title">Q2 · 牙椅 INTEGO 占高频维修 TOP10 中 5→4 席，质量问题集中</div>
+          <div class="advice-data">2025/2026 TOP10 设备中分别 5、4 个为 INTEGO/C8+ 牙椅。</div>
+          <div class="advice-action"><ol>
+            <li>新购牙椅时把「3 年内同型号返修率 &lt;15%」写入采购技术规格</li>
+            <li>对比国产牙椅（同期单量/单均费用），用真实数据决定下一轮集采品牌</li>
+            <li>把 INTEGO 高频故障点（管路/电气）作为新购验收必检项</li>
+          </ol></div>
+        </div>
+        <div class="advice-card">
+          <span class="advice-tag tag-pitfall">维保避坑</span>
+          <div class="advice-title">Q3 · 老化-预期之外 -23.3% / 预期之内 110.8%，警惕被滥用</div>
+          <div class="advice-data">原始故障原因分类，2025「老化-预期之外」421 单 → 2026 仅 323 单；「老化-预期之内」120→253 单。</div>
+          <div class="advice-action"><ol>
+            <li>反映「老化故障正在被合理归类」是好事，但要警惕「预期之内」被滥用 — 抽样 30 单确认确实是设计寿命到期而非维保失职</li>
+            <li>建立设备使用年限台账，到龄前 6 个月启动预防性更换评估</li>
+            <li>把「老化-预期之内」维保工单的成本纳入设备全生命周期成本核算</li>
           </ol></div>
         </div>
       </div>
         </div>
       </div>
-      <div class="section" id="sec-7" style="display:none" data-page-node-id="LrEFLr8l9Bhfes1tHULIC7">
-        <div class="sec-header" onclick="toggle(7)" data-page-node-id="PjxJED9SCUN583lynrDbIR"><div class="sec-title" data-page-node-id="g8Q3lPBmJU8LEdA69rRiI0">📄 排除项概览</div><div class="sec-toggle" id="tg-7" data-page-node-id="agXpX9Shn6BhJjJW3R22SV">▼</div></div>
-        <div class="sec-divider" data-page-node-id="IFAHuwBRRjnOBI5VQQ7drG"></div>
-        <div class="sec-body" id="bd-7" data-page-node-id="yZCo6kCCXZOrUudu9FSLQc">
+      <div class="section" id="sec-7" style="display:none">
+        <div class="sec-header" onclick="toggle(7)"><div class="sec-title">📄 排除项概览</div><div class="sec-toggle" id="tg-7">▼</div></div>
+        <div class="sec-divider"></div>
+        <div class="sec-body" id="bd-7">
           
-          <div style="color:#6c757d;font-size:13px;line-height:1.7;margin-bottom:12px;" data-page-node-id="lIs5nDC8yfPCcPHDGptE0s">
-            以下两类工单（A=培训/改装/升级/延保，B=设备移机/设备转运）已被排除在主体分析之外，此处仅作总览参考。<br data-page-node-id="J6BlN1Wxo9ETOoOfh0lM5b">
-            比例 = 该类单量 ÷ 当年同期基础有效行（已结束+待验收+中心编号非空，未排除任何类别）。<br data-page-node-id="KEREK7kQds17NIrRHGII3i">
+          <div style="color:#6c757d;font-size:13px;line-height:1.7;margin-bottom:12px;">
+            以下两类工单（A=培训/改装/升级/延保，B=设备移机/设备转运）已被排除在主体分析之外，此处仅作总览参考。<br>
+            比例 = 该类单量 ÷ 当年同期基础有效行（已结束+待验收+中心编号非空，未排除任何类别）。<br>
             2025 年同期基础有效行 = 1071 &nbsp;|&nbsp; 2026 年同期基础有效行 = 1109
           </div>
-          <table data-page-node-id="mZ4SsMwKk8aGfrCJ313iAs">
-            <thead data-page-node-id="54HiUBAl8K8wws7gXEbCDq">
-              <tr data-page-node-id="hSQw5911pNGKH1bEQTyiq0">
-                <th data-page-node-id="YxnhmK4dAg9bHGnwDpKthV">类别</th><th data-page-node-id="zDsnHr08zczUb1WJWGGFeT">年份</th><th style="text-align:right;" data-page-node-id="OAvxZqfjSkfVKRCALQwBJ4">单量</th><th style="text-align:right;" data-page-node-id="8RQPZRYQ5krJKUUkktr7WD">设备数</th><th style="text-align:right;" data-page-node-id="76XxAD5Bn5KKiG5DWxYxUk">总费用（¥）</th><th style="text-align:right;" data-page-node-id="SsrkxTnJVjxHllBnz0u4o1">节省费用（¥）</th><th style="text-align:right;" data-page-node-id="e9xGc1vNh7tugiRVLOMBkr">占基础有效行比例</th>
+          <table>
+            <thead>
+              <tr>
+                <th>类别</th><th>年份</th><th style="text-align:right;">单量</th><th style="text-align:right;">设备数</th><th style="text-align:right;">总费用（¥）</th><th style="text-align:right;">节省费用（¥）</th><th style="text-align:right;">占基础有效行比例</th>
               </tr>
             </thead>
-            <tbody data-page-node-id="WCeAa0CYgV6tw7VswWIVGe">
-              <tr data-page-node-id="r6lcOq9ut2ucj1dQCX2RvK"><td data-page-node-id="EwqWzxKjI8z7q5AzNLpY0z">培训/改装/升级/延保</td><td style="text-align:center;" data-page-node-id="FWitaBDozVKK4L4ar2uPsT">2025</td><td style="text-align:right;" data-page-node-id="8FBGABU8qAhOVqEndyU6Tt">37</td><td style="text-align:right;" data-page-node-id="CDD9XrVSDTbFFD4xk50Jc1">26</td><td style="text-align:right;" data-page-node-id="Pn42yQeUcSAzCwMZUAFPKw">605,082.62</td><td style="text-align:right;" data-page-node-id="1LfEA9UwbigjLFYQobzDT2">0.00</td><td style="text-align:right;" data-page-node-id="RmbtDTBK8dB5hRWyHBOT63">3.45%</td></tr><tr data-page-node-id="bNGYHPRkZS8fIQxiE9Qyee"><td data-page-node-id="n8OJAAW9eFs4MUEqECkwL3">培训/改装/升级/延保</td><td style="text-align:center;" data-page-node-id="G9sxNMyhb2VQ5hqJznXGQr">2026</td><td style="text-align:right;" data-page-node-id="rHNHM9Sl8rLbbMM9SU6bsx">19</td><td style="text-align:right;" data-page-node-id="JsFvZE0TKagvVSARLPdDKC">19</td><td style="text-align:right;" data-page-node-id="lPdZDQuiGtrplKvoNarZuW">515,902.80</td><td style="text-align:right;" data-page-node-id="wUJlOWQw9z3faBPRn1iLiJ">4,000.00</td><td style="text-align:right;" data-page-node-id="phDlB6DtNExY5OozEPykYn">1.71%</td></tr><tr data-page-node-id="cNG7tlB9J1mBmZOb607RX9"><td data-page-node-id="Ks1DlDQkI9Rim1HfPWsmLb">设备移机/设备转运</td><td style="text-align:center;" data-page-node-id="IPtriugD8SGO9Uu1AskLxC">2025</td><td style="text-align:right;" data-page-node-id="6ITwK1r9hpzT91O7bLsblB">38</td><td style="text-align:right;" data-page-node-id="Tf4tZ8qVuxibFKAn9uShK9">30</td><td style="text-align:right;" data-page-node-id="AagnYbM4FXnbxKQG8YsYyj">88,101.21</td><td style="text-align:right;" data-page-node-id="n5PGtXkMTyF3wbzAlW8VbX">4,700.00</td><td style="text-align:right;" data-page-node-id="1S4lM79xlFpWqwEEKhUVTL">3.55%</td></tr><tr data-page-node-id="BEFW39rVVqSz43HC2UtsKL"><td data-page-node-id="RaXCC033ZDjRKSE1GWSbyC">设备移机/设备转运</td><td style="text-align:center;" data-page-node-id="YTkOvujZgthQrC35ske1xg">2026</td><td style="text-align:right;" data-page-node-id="7L3qyc9mQZ7jggGfccc1XB">51</td><td style="text-align:right;" data-page-node-id="pKJhKr7A43wF5KWJCCkYxN">41</td><td style="text-align:right;" data-page-node-id="Os8GEpQQJihWFFu44Nhgod">99,800.01</td><td style="text-align:right;" data-page-node-id="mNB3neb8ZpIxBwRJ1jHO9m">91,700.00</td><td style="text-align:right;" data-page-node-id="CjsrROCHaCWifrOReLZftE">4.6%</td></tr>
+            <tbody>
+              <tr><td>培训/改装/升级/延保</td><td style="text-align:center;">2025</td><td style="text-align:right;">37</td><td style="text-align:right;">26</td><td style="text-align:right;">605,082.62</td><td style="text-align:right;">0.00</td><td style="text-align:right;">3.45%</td></tr><tr><td>培训/改装/升级/延保</td><td style="text-align:center;">2026</td><td style="text-align:right;">19</td><td style="text-align:right;">19</td><td style="text-align:right;">515,902.80</td><td style="text-align:right;">4,000.00</td><td style="text-align:right;">1.71%</td></tr><tr><td>设备移机/设备转运</td><td style="text-align:center;">2025</td><td style="text-align:right;">38</td><td style="text-align:right;">30</td><td style="text-align:right;">88,101.21</td><td style="text-align:right;">4,700.00</td><td style="text-align:right;">3.55%</td></tr><tr><td>设备移机/设备转运</td><td style="text-align:center;">2026</td><td style="text-align:right;">51</td><td style="text-align:right;">41</td><td style="text-align:right;">99,800.01</td><td style="text-align:right;">91,700.00</td><td style="text-align:right;">4.6%</td></tr>
             </tbody>
           </table>
-          <div style="color:#6c757d;font-size:13px;line-height:1.7;margin-top:12px;" data-page-node-id="PaMI6wA3zws7v1rpHBVbNG">
-            <strong data-page-node-id="KtRK8A39sKrD1qrcrafRyB">说明：</strong>两类工单共 145 单，其中 2025 年 75 单（占同期基础有效行 7.0%）、2026 年 70 单（占 6.31%）。<br data-page-node-id="CQpLpIrz5gyRbHjXYxGr6C">
+          <div style="color:#6c757d;font-size:13px;line-height:1.7;margin-top:12px;">
+            <strong>说明：</strong>两类工单共 145 单，其中 2025 年 75 单（占同期基础有效行 7.0%）、2026 年 70 单（占 6.31%）。<br>
             两类工单性质为非故障性维修（培训、预防性、改装升级、延保、移机转运），已从主体分析及"看板建议"模块中统一排除，以更真实反映日常设备维修运维负担。
           </div>
     
