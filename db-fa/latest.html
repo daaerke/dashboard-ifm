@@ -533,6 +533,19 @@ progress { display: block; width: 100%; height: 9px; accent-color: #006f8a; }
 <script>/* 原始 OA 数据只读；人工复核结果作为可追溯的统计层。 */
 'use strict';
 window.createMaintenanceMetrics = function (rawRecords, collaboration) {
+  const emptyCategory='__oa_category_empty__';
+  const rawCategory=row=>row.categoryRaw??row.category??'';
+  const categoryAliases=new Map([
+    ['设施维修','设施维修（不带电设施）'],['设施维修(不带电设施)','设施维修（不带电设施）'],
+    ['综合环境保洁养护','综合环境保洁养护（保洁类）'],['综合环境保洁养护(保洁类)','综合环境保洁养护（保洁类）'],
+    ['非医疗设备维修维保','非医疗设备维修维保（电器类）'],['非医疗设备维修维保(电器类)','非医疗设备维修维保（电器类）'],
+  ]);
+  const categoryKey=row=>{
+    const raw=String(rawCategory(row)).trim();
+    if(!raw)return emptyCategory;
+    return categoryAliases.get(raw.normalize('NFKC').replace(/\s+/g,''))||raw;
+  };
+  const categoryName=key=>key===emptyCategory?'未填写':key;
   const sourceFields=['id','region','site','category','description','status','result','actual','estimate','acceptance','rating','submitted','closed','solution','completion','detail','events','oaUrl'];
   const cases=new Map((collaboration.cases || []).map(c=>[c.oaId,c]));
   const records=rawRecords.map(raw=>{
@@ -560,7 +573,7 @@ window.createMaintenanceMetrics = function (rawRecords, collaboration) {
   const expenseEligible=row=>row.status==='已完成' && row.result==='同意' && !row.excludeExpense;
   const expenseMonth=row=>/^\d{4}-(0[1-9]|1[0-2])-\d{2}/.test(row.closed||'')?row.closed.slice(0,7):'';
   const sum=rows=>rows.reduce((n,r)=>n+Math.round((Number.isFinite(r.actual)?r.actual:0)*100),0)/100;
-  return {records,expenseEligible,expenseMonth,sum};
+  return {records,expenseEligible,expenseMonth,sum,categoryKey,categoryName,rawCategory};
 };
 </script>
 <script>/* 首页和历史线索只读取同一份V2.1结果，不在浏览器另做关键词分类。 */
@@ -965,12 +978,12 @@ window.createDashboardWorkflow = function ({meta, records, state, byId, esc, cur
     const pattern=issuePattern(row.description);
     const from=day(row.submitted)-180*86400000;
     const same=records.filter(candidate=>{
-      if (candidate.id===row.id || candidate.site!==row.site || !candidate.category || candidate.category!==row.category || candidate.actual==null || groupStatus(candidate)!=='审批同意' || candidate.missingFromExport) return false;
+      if (candidate.id===row.id || candidate.site!==row.site || !candidate.category || categoryKey(candidate)!==categoryKey(row) || candidate.actual==null || groupStatus(candidate)!=='审批同意' || candidate.missingFromExport) return false;
       const when=day(candidate.submitted);
       if (!(when>=from && when<day(row.submitted))) return false;
       return pattern ? issuePattern(candidate.description)?.[0]===pattern[0] : row.description.trim().length>=5 && row.description.trim()===candidate.description.trim();
     }).slice(0,4);
-    return `<details class="prevention-item price-reference"><summary><strong>同类历史费用参考（${same.length} 单）</strong></summary><p class="subtext">按此前 180 天内同网点、同 OA 分类及相似故障筛选。会上核对材料和维修范围后再判断费用。</p>${same.length?table(['提交时间','历史工单','实际金额'],same.map(r=>`<tr><td>${dateLabel(r.submitted)}</td><td>${button(shown(r.description),'order',r.id)}</td><td>${currency(r.actual)}</td></tr>`).join('')):'<p class="subtext">暂无满足条件的可比记录。</p>'}</details>`;
+    return `<details class="prevention-item price-reference"><summary><strong>同类历史费用参考（${same.length} 单）</strong></summary><p class="subtext">按此前 180 天内同网点、同映射分类及相似故障筛选。会上核对材料和维修范围后再判断费用。</p>${same.length?table(['提交时间','历史工单','实际金额'],same.map(r=>`<tr><td>${dateLabel(r.submitted)}</td><td>${button(shown(r.description),'order',r.id)}</td><td>${currency(r.actual)}</td></tr>`).join('')):'<p class="subtext">暂无满足条件的可比记录。</p>'}</details>`;
   }
   function signals() {
     const cutoff=day(meta.cutoff);
@@ -1156,7 +1169,7 @@ window.createAlgorithmView=function({data,esc,integer,table,panel,tag,kpi,dateLa
   const {meta} = data;
   const collaborationData=JSON.parse(document.getElementById('collaboration-data')?.textContent || '{"cases":[]}');
   const metrics=window.createMaintenanceMetrics(data.records,collaborationData);
-  const {records,expenseEligible,expenseMonth}=metrics;
+  const {records,expenseEligible,expenseMonth,categoryKey,categoryName,rawCategory}=metrics;
   const collaborationLabels={rejected_cost:'未通过但有费用',failed_acceptance:'审批同意但验收不合格',missing_amount:'审批同意但金额空白',waiting_cost:'0元但费用待确认',duplicate:'备注提示重复提交'};
   const $ = id => document.getElementById(id);
   const pageHeaderMarkup=document.querySelector('.page-head').innerHTML;
@@ -1171,7 +1184,7 @@ window.createAlgorithmView=function({data,esc,integer,table,panel,tag,kpi,dateLa
     header.querySelector('#page-actions').innerHTML=state.view==='overview'?`<button class="button primary" data-focus="审批中">查看在途工单 ${icon('arrow',16)}</button>`:'';
   }
   const views = {
-    overview: ['管理概览', '非医疗设备维修维保看板', '查看报修量、工单进展、已确认发生费用和验收结果。'],
+    overview: ['管理概览', '概览', '查看报修量、工单进展、已确认发生费用和验收结果。'],
     orders: ['工单评审', '工单评审', '按区域、月份和网点逐单评审，记录意见并形成会议结论。'],
     cost: ['费用分析', '费用分析', '按工单完结月份查看费用、区域分布、网点和维修用途；人工确认结果独立留痕。'],
     time: ['阶段时效', '阶段时效', '按审批记录衡量各节点间隔，待办停留计算至本批数据截止日。'],
@@ -1204,9 +1217,6 @@ window.createAlgorithmView=function({data,esc,integer,table,panel,tag,kpi,dateLa
   const moneySum = rows => rows.reduce((sum, row) => sum + Math.round((row.actual ?? 0) * 100), 0) / 100;
   const percentage = (part, total) => total ? `${(part * 100 / total).toFixed(1)}%` : '—';
   const shown = value => esc(value || '—');
-  const emptyCategory = '__oa_category_empty__';
-  const categoryKey = row => row.category || emptyCategory;
-  const categoryName = key => key===emptyCategory?'未填写':key;
   const dateLabel = value => shown(value?.replace('T', ' ').slice(0, 16));
   const localTime = value => value ? Date.parse(value.replace(' ', 'T') + (/[zZ]|[+-]\d\d:\d\d$/.test(value) ? '' : '+08:00')) : NaN;
   const cutoffTime = localTime(`${meta.cutoff}T23:59:59`);
@@ -1455,7 +1465,7 @@ window.createAlgorithmView=function({data,esc,integer,table,panel,tag,kpi,dateLa
     return `<div class="cards">${kpi('已确认发生费用',wan(moneySum(dated)),`${currency(moneySum(dated))} · 按完结月份`,'cost','teal')}${kpi('已纳入完结工单',integer(dated.length),'已完成且审批同意','orders')}${kpi('实际金额待补',integer(approved.filter(r=>r.actual==null).length),'空白不按0处理','alert','amber')}${kpi('费用清单待补',integer(approved.filter(waitingCost).length),'原单0元不代表免费','quality','rose')}</div>
       ${panel('每月费用趋势','按完结月份 · 已完成且审批同意 · 含人工确认金额',monthlyCost(full,state.costMonth))}
       ${panel('每月费用由哪些区域发生','点击月份查看当月，点击区域金额查看该月该区域',table(['完结月份',...regions,'合计'],matrix),'cost-region-matrix')}
-      <div class="grid-two">${panel('费用花在哪些网点','当前费用月份与区域范围 · 点击网点筛选',bars(ranks(dated,r=>r.site||'网点未填写',moneySum),currency,'cost-site'))}${panel('费用用于哪些需求','沿用OA原始分类 · 点击分类筛选',bars(ranks(dated,categoryKey,moneySum),currency,'category'))}</div>
+      <div class="grid-two">${panel('费用花在哪些网点','当前费用月份与区域范围 · 点击网点筛选',bars(ranks(dated,r=>r.site||'网点未填写',moneySum),currency,'cost-site'))}${panel('费用用于哪些需求','新旧分类合并映射 · 点击分类筛选',bars(ranks(dated,categoryKey,moneySum),currency,'category'))}</div>
       ${panel('费用工单明细','当前费用月份与区域范围 · 按金额从高到低 · 点击事项看维修内容和依据',`<details${state.costMonth?' open':''}><summary>查看 ${integer(expenses.length)} 条有金额工单（含明确0元）</summary>${table(['费用月份／完结时间','区域／网点','维修事项','原始分类','纳入金额'],detail)}</details>`)}
       <div class="callout">费用按审批完成时间归入月份，依管理约定视作已支付；审批中、终止及未通过待核实金额不纳入。当前范围另有 ${integer(pendingMoney.length)} 条非纳入状态的正金额记录，共 ${currency(moneySum(pendingMoney))}，保留原值供复核。${adjustments.length?`本范围 ${integer(adjustments.length)} 条已应用人工确认，工单详情保留OA原值及协作编号。`:''}${approved.filter(r=>!expenseMonth(r)).length?`另有 ${integer(approved.filter(r=>!expenseMonth(r)).length)} 条缺完结日期，暂不分配到月份。`:''}</div>`;
   }
@@ -1568,7 +1578,7 @@ window.createAlgorithmView=function({data,esc,integer,table,panel,tag,kpi,dateLa
   }
   function openRecord(row) {
     const oa=safeLink(row.oaUrl,'oa');
-    const content=[['审批编号',row.id],['提交时间',row.submitted],['所在区域',row.region],['网点／位置',row.site],['所属单元',row.unit],['当前负责人',row.owner],['需求分类',categoryName(categoryKey(row))],['紧急程度',row.urgency],['维修方式',row.method],['当前节点',row.node],['统计实际金额',row.actual==null?'':currency(row.actual)],['OA原始实际金额',row.oaActual==null?'未填写':currency(row.oaActual)],['预估金额',row.estimate==null?'':currency(row.estimate)],['统计验收结果',row.acceptance],['OA原始验收结果',row.oaAcceptance],['审批完成时间',row.closed],['服务评价',Number.isFinite(row.rating)?ratingLabel(ratingKey(row)):''],['维修方案',row.solution],['完成说明',row.completion],['验收或补充说明',row.detail]];
+    const content=[['审批编号',row.id],['提交时间',row.submitted],['所在区域',row.region],['网点／位置',row.site],['所属单元',row.unit],['当前负责人',row.owner],['需求分类（映射）',categoryName(categoryKey(row))],['OA原始需求分类',rawCategory(row)||'未填写'],['紧急程度',row.urgency],['维修方式',row.method],['当前节点',row.node],['统计实际金额',row.actual==null?'':currency(row.actual)],['OA原始实际金额',row.oaActual==null?'未填写':currency(row.oaActual)],['预估金额',row.estimate==null?'':currency(row.estimate)],['统计验收结果',row.acceptance],['OA原始验收结果',row.oaAcceptance],['审批完成时间',row.closed],['服务评价',Number.isFinite(row.rating)?ratingLabel(ratingKey(row)):''],['维修方案',row.solution],['完成说明',row.completion],['验收或补充说明',row.detail]];
     const eventList=row.events.length?`<ol class="timeline">${row.events.map(event=>`<li class="timeline-item"><div><strong>${shown(event.node)}</strong> ${event.action?tag(event.action):''}</div><span class="subtext">${dateLabel(event.time)}${event.actor?` · ${esc(event.actor)}`:''}</span>${event.note?`<p>${esc(event.note)}</p>`:''}</li>`).join('')}</ol>`:'<p class="subtext">无可读取的节点记录。</p>';
     const attachments=row.attachments.length?`<ul class="attachment-list">${row.attachments.map((item,index)=>{const local=workflow.attachmentLink(row,index), url=local?esc(local):safeLink(item.url,'attachment');return `<li>${url?`<a href="${url}" target="_blank" rel="noopener noreferrer">${esc(item.name)}</a>`:shown(item.name)}</li>`;}).join('')}</ul>`:'<p class="subtext">本地附件索引无匹配项。</p>';
     $('detail-content').innerHTML=`<header class="dialog-head"><div><p class="eyebrow">工单详情 · ${tag(groupStatus(row),statusTone(groupStatus(row)))}</p><h2 id="detail-title">${shown(row.description)}</h2></div><button class="dialog-close" data-close aria-label="关闭详情">${icon('close',22)}</button></header><div class="dialog-body">${oa?`<div class="dialog-actions"><a class="button subtle" href="${oa}" target="_blank" rel="noopener noreferrer">打开钉钉原单 ${icon('arrow',15)}</a></div>`:''}${waitingCost(row)?'<p class="callout">该单实填 0 元，完成说明注明费用清单待确认。</p>':''}${row.missingFromExport?'<p class="callout">本批导出未出现该单。保留上次记录供核对。</p>':''}<dl class="detail-grid">${content.map(([label,value])=>`<div><dt>${label}</dt><dd>${shown(value)}</dd></div>`).join('')}</dl>${row.reviewAdjustment?`<p class="callout">已应用 ${esc(row.reviewAdjustment.caseId)} 人工确认：${esc(row.reviewAdjustment.changes.join('、'))}。${row.acceptance==='误选已确认'?'原不合格已移出不合格统计；未直接补写合格，不参与明确合格率分母。':''}</p>`:''}${collaborationReferences(row)}${workflow.priceReference(row)}${workflow.recordForm(row)}<h3>审批时间线</h3>${eventList}<h3>附件（${row.attachments.length}）</h3>${attachments}</div>`;
@@ -1581,8 +1591,8 @@ window.createAlgorithmView=function({data,esc,integer,table,panel,tag,kpi,dateLa
       if (/^[\t\r\n]|^\s*[=+\-@]/.test(cell)) cell="'"+cell;
       return '"'+cell.replaceAll('"','""')+'"';
     };
-    const fields=['审批编号','提交时间','所在区域','网点','需求分类','故障描述','紧急程度','审批状态','当前节点','当前负责人','验收结果（含复核）','本次服务评价','实际金额（含复核）','OA原始实际金额','OA原始验收结果','费用月份（完结月）','协作编号'];
-    const result=[fields,...orderRows(filtered()).map(r=>["'"+r.id,r.submitted,r.region,r.site,r.category,r.description,r.urgency,groupStatus(r),r.node,r.owner,r.acceptance,r.rating,r.actual,r.oaActual,r.oaAcceptance,expenseMonth(r),r.reviewAdjustment?.caseId||''])];
+    const fields=['审批编号','提交时间','所在区域','网点','需求分类（映射）','OA原始需求分类','故障描述','紧急程度','审批状态','当前节点','当前负责人','验收结果（含复核）','本次服务评价','实际金额（含复核）','OA原始实际金额','OA原始验收结果','费用月份（完结月）','协作编号'];
+    const result=[fields,...orderRows(filtered()).map(r=>["'"+r.id,r.submitted,r.region,r.site,categoryName(categoryKey(r)),rawCategory(r),r.description,r.urgency,groupStatus(r),r.node,r.owner,r.acceptance,r.rating,r.actual,r.oaActual,r.oaAcceptance,expenseMonth(r),r.reviewAdjustment?.caseId||''])];
     const href=URL.createObjectURL(new Blob(['\uFEFF'+result.map(line=>line.map(csv).join(',')).join('\r\n')],{type:'text/csv;charset=utf-8'}));
     const link=document.createElement('a');link.href=href;link.download=`维修维保工单_${meta.cutoff}.csv`;link.click();setTimeout(()=>URL.revokeObjectURL(href),1000);
   }
